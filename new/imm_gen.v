@@ -14,12 +14,12 @@ module imm_gen(
         end
         // I_type:arith
         else if(in[6:0] == 7'b0010011) begin
-            // if (in[31:25] == 7'b0000000 || in[31:25] == 7'b0100000) begin
-            //     imm = {27'b0,in[24:20]}; // shift part
-            // end
-            // else begin
+            if (in[14:12] == 3'b001 || in[14:12] == 3'b101) begin
+                imm = {27'b0, in[24:20]};
+            end 
+            else begin
                 imm = {{20{in[31]}}, in[31:20]}; // other part
-            // end
+            end
         end
         // I_type:jalr
         else if(in[6:0] == 7'b1100111) begin
