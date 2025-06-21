@@ -94,7 +94,7 @@ reg [31:0] Hard_result;
 always @* begin
     case(ALU_control)
         4'b0111 : Hard_result = imme; // lui
-        4'b1010 : Hard_result = $signed(imme) + $signed(Read_data1); // auipc
+        4'b1010 : Hard_result = $signed(imme) + $signed(pc_out); // auipc
     endcase
 end
 // ############################################################
