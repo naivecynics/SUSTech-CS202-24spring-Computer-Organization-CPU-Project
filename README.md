@@ -8,14 +8,17 @@ https://respected-llama-d66.notion.site/Computer-Organization-Project-Documentat
 
 Thanks to the PR form:
 
-> ![12312718 王永仲](https://github.com/kite-sense)
-> ![12212523 谭文瀚](https://github.com/minerasdf)
+> [12312718 王永仲](https://github.com/kite-sense)
+>
+> [12212523 谭文瀚](https://github.com/minerasdf)
 
 
 ## （1）Contribution Ratio
 
 > WYT  吴雨潼 12213012   3Mker           33.3%
+>
 > QKT  秦恺通 12212606   IRONMAN1024     33.3%
+>
 > HLC  黄朗初 12213009   naivecynics     33.3%
 
 ## （2）Directory Catalog
