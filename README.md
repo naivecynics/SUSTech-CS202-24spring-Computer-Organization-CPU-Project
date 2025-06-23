@@ -1,28 +1,22 @@
 # Computer-Organization-Project-Documentation-CPU-Design
 
----
 This page is live on NOTION, click the following link for better reading experience
 
 https://respected-llama-d66.notion.site/Computer-Organization-Project-Documentation-CPU-Design-02267c04d8cc42b2948275ba1ce84377?pvs=4
 
-[https://github.com/naivecynics/Computer_Orgnization_Project.git](https://github.com/naivecynics/Computer_Orgnization_Project.git)
-
----
-
-# 0. Directory
-
----
-
 # 1. Developers Information
 
----
+Thanks to the PR form:
+
+> ![12312718 王永仲](https://github.com/kite-sense)
+> ![12212523 谭文瀚](https://github.com/minerasdf)
+
 
 ## （1）Contribution Ratio
 
-> WYT 吴雨潼 12213012   3Mker                       33.3%
-QKT  秦恺通 12212606   IRONMAN1024        33.3%
-HLC  黄朗初 12213009   naivecynics               33.3%
-> 
+> WYT  吴雨潼 12213012   3Mker           33.3%
+> QKT  秦恺通 12212606   IRONMAN1024     33.3%
+> HLC  黄朗初 12213009   naivecynics     33.3%
 
 ## （2）Directory Catalog
 
@@ -41,12 +35,10 @@ HLC  黄朗初 12213009   naivecynics               33.3%
 ├── Design_DIagram.jpg          // Reference design diagram
 │
 ├── constrs_1                   
-│   └── new
-│       ├── eg01.xdc            // eg01 constrs file
-│       └── minisys.xdc         // minisys constrs file
+│   ├── eg01.xdc                // eg01 constrs file
+│   └── minisys.xdc             // minisys constrs file
 ├── new
-│   │                           // cpu core module
-│   ├── ALU.v
+│   ├── ALU.v                   // cpu core module
 │   ├── cpu_top.v
 │   ├── data_memory.v
 │   ├── datapath.v
@@ -101,96 +93,66 @@ HLC  黄朗初 12213009   naivecynics               33.3%
 │       ├── scene2.txt
 │       └── scene2_keyboard.txt
 └── sim_1                       // simulation files
-│   └── new
-│       ├── controller_tbc.v
-│       ├── cpuclk_tbc.v
-│       ├── keypad_tbc.v
-│       ├── top_tbc.v
-│       └── tube_tbc.v
+│   ├── controller_tbc.v
+│   ├── cpuclk_tbc.v
+│   ├── keypad_tbc.v
+│   ├── top_tbc.v
+│   └── tube_tbc.v
 └── END
 ```
 
 # 2. Development Github Log
 
----
-
 ```bash
-$ git log --graph --pretty=format:"%h - %an, %ad : %s" --abbrev-commit --date=short
-
-* cfbbe33 - naivecynics, 2024-06-03 : final
-* 0b85c8c - naivecynics, 2024-06-03 : final wind up
-* 9ad3ec2 - IRONMAN1024, 2024-06-02 : update
-* a19269c - naivecynics, 2024-06-02 : ecall +1
-* c6c2c0b - IRONMAN1024, 2024-05-27 : qkt111
-* 7178d68 - IRONMAN1024, 2024-06-01 : uart_top
-* f5d6612 - naivecynics, 2024-06-01 : keyboard debug
-* b10839c - 3Mker, 2024-05-31 : update
-* 61ebb2d - Langchu Huang, 2024-05-31 : GNU toolchain added
-* f7529a5 - 3Mker, 2024-05-27 : update
-* d7eefa7 - 3Mker, 2024-05-27 : update
-* 818ab03 - naivecynics, 2024-05-27 : block ecall signal
-* 5ec146b - 3Mker, 2024-05-27 : update
-* e0b856e - 3Mker, 2024-05-24 : wytnew
-* 6b8039e - 3Mker, 2024-05-24 : wyt
-* 5f8d2a8 - naivecynics, 2024-05-27 : update so many things
-* 6aa1991 - naivecynics, 2024-05-24 : all
-* 5f49526 - naivecynics, 2024-05-22 : beq_debug_passed
-* 7903d8e - naivecynics, 2024-05-22 : hlc_pc_ecall
-*   79de483 - 3Mker, 2024-05-22 : Merge branch 'master'
-|\  
-| * 34583b7 - naivecynics, 2024-05-19 : update
-| * eefa048 - naivecynics, 2024-05-19 : hardware drive
-* | ef86eef - 3Mker, 2024-05-22 : wyt update
-|/  
-* 044aab3 - 3Mker, 2024-05-19 : preliminary
-* 803806d - IRONMAN1024, 2024-05-17 : modified
-* 7ffa890 - IRONMAN1024, 2024-05-15 : update
-* 3159544 - IRONMAN1024, 2024-05-15 : i_fetch
-*   9f38ff1 - 3Mker, 2024-05-15 : Merge branch 'master'
-|\  
-| * 4ed4f12 - Langchu Huang, 2024-05-15 : debug: executable
-| * 429350b - Langchu Huang, 2024-05-15 : add gitignore
-| * d696e3c - Langchu Huang, 2024-05-13 : supplement
-| * aae18a1 - naivecynics, 2024-05-13 : 1.ip setting 2. compile passed 3. add instr mem
-* | e58b73e - 3Mker, 2024-05-15 : asm
-* | 2fe8b4c - 3Mker, 2024-05-15 : add asm sample
-|/  
-*   0530bc9 - 3Mker, 2024-05-12 : Merge branch 'master' 
-|\  
-| * 209217f - IRONMAN1024, 2024-05-12 : datapath finish!
-| * e65fdf4 - IRONMAN1024, 2024-05-12 : PC
-* | 603b2dc - 3Mker, 2024-05-12 : update_decoder
-|/  
-* 0a1e25c - naivecynics, 2024-05-12 : 7tube
-* 176f4c7 - naivecynics, 2024-05-12 : update
-* f84d546 - naivecynics, 2024-05-12 : updatae
-*   4f75181 - 3Mker, 2024-05-12 : Merge branch 'master' 
-|\  
-| * 75b0698 - IRONMAN1024, 2024-05-07 : ALU
-* | 79f601c - 3Mker, 2024-05-12 : update
-|/  
-* ab2d3d2 - naivecynics, 2024-05-06 : ip core
-* ba0e660 - naivecynics, 2024-04-29 : add readme
-* 236aa23 - naivecynics, 2024-04-29 : delete trash
-* 138b17c - naivecynics, 2024-04-29 : previous cpu design
+* 661bd75 (HEAD -> master, origin/master, origin/HEAD) Update auipc in ALU.v (38 minutes ago) <kite_sense>
+* 362abcb Update I_type: arith in imm_gen.v (38 minutes ago) <kite_sense>
+* 2346523 add diagram folder (1 year ago) <naivecynics>
+* 62dd233 update documentary (1 year ago) <naivecynics>
+* fcc456a final (1 year, 1 month ago) <naivecynics>
+* cfbbe33 final (1 year, 1 month ago) <naivecynics>
+* 0b85c8c final wind up (1 year, 1 month ago) <naivecynics>
+* 9ad3ec2 update (1 year, 1 month ago) <IRONMAN1024>
+* a19269c ecall +1 (1 year, 1 month ago) <naivecynics>
+* c6c2c0b qkt111 (1 year, 1 month ago) <IRONMAN1024>
+* 7178d68 uart_top (1 year, 1 month ago) <IRONMAN1024>
+* f5d6612 keyboard debug (1 year, 1 month ago) <naivecynics>
+* b10839c update (1 year, 1 month ago) <3Mker>
+* 61ebb2d GNU toolchain added (1 year, 1 month ago) <Langchu Huang>
+* f7529a5 update (1 year, 1 month ago) <3Mker>
+* d7eefa7 update (1 year, 1 month ago) <3Mker>
+* 818ab03 block ecall signal (1 year, 1 month ago) <naivecynics>
+* 5ec146b update (1 year, 1 month ago) <3Mker>
+* e0b856e wytnew (1 year, 1 month ago) <3Mker>
+* 6b8039e wyt (1 year, 1 month ago) <3Mker>
+* 5f8d2a8 update so many things (1 year, 1 month ago) <naivecynics>
+* 6aa1991 all (1 year, 1 month ago) <naivecynics>
+* 5f49526 beq_debug_passed (1 year, 1 month ago) <naivecynics>
+* 7903d8e hlc_pc_ecall (1 year, 1 month ago) <naivecynics>
+*   79de483 Merge branch 'master' of https://github.com/naivecynics/Computer_Orgnization_Project (1 year, 1 month ago) <3Mker>
+|\
+| * 34583b7 update (1 year, 1 month ago) <naivecynics>
+| * eefa048 hardware drive (1 year, 1 month ago) <naivecynics>
+* | ef86eef wyt update (1 year, 1 month ago) <3Mker>
+|/
+* 044aab3 preliminary (1 year, 1 month ago) <3Mker>
 ```
 
 # 3. CPU Architecture Design
 
----
+
 
 ## （1）CPU Information Card
 
 | CPU时钟 | CPI | CPU周期 | Pipeline |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | 23MHz | 1 | 单周期 | nonsupport |
 
 | 寻址空间设计 | 寻址单位 | 指令空间 | 数据空间 | 栈空间的基地址 |
-| --- | --- | --- | --- | --- |
+|  | --- | --- | --- | --- |
 | 哈佛结构 | Byte | $2^{14} $ Bytes | $2^{14}$ Bytes | $2^{10}$ Bytes |
 
 | 外设 I/O 支持 | I/O 访问方式 |
-| --- | --- |
+|  | --- |
 | MMIO | 中断访问 |
 
 ## （2）Instruction Set Architecture
@@ -202,7 +164,7 @@ $ git log --graph --pretty=format:"%h - %an, %ad : %s" --abbrev-commit --date=sh
 ## （3）CPU Ports
 
 | cpu_top ports | 位宽 | 类型 | 说明 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
 | keyboard_clk | 1 | input | 键盘时钟 |
@@ -252,25 +214,25 @@ parameters
 ## （5）Submodule ports specifications and functions
 
 | 模块名称：debounce_reset | 位宽 | 类型 | 说明：信号复位消抖 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk | 1 | input | 100Mhz |
 | temkey | 1 | input | 初始复位信号 |
 | finalkey | 1 | output | 消抖后复位信号 |
 
 | 模块名称：debounce_finish | 位宽 | 类型 | 说明：确认信号消抖 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk | 1 | input | 100Mhz |
 | temkey | 1 | input | 初始结束信号 |
 | finalkey | 1 | output | 消抖后结束信号 |
 
 | 模块名称：cpuclk_inst | 位宽 | 类型 | 说明：分频器分出10/23Mhz的时钟 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk_in1 | 1 | input | 100Mhz输入信号 |
 | clk_out1 | 1 | output | 23Mhz输出信号 |
 | clk_out2 | 1 | output | 10Mhz输出信号 |
 
 | 模块名称：tube_inst |  | 类型 | 说明：数码管显示数据 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk | 1 | input | 100Mhz |
 | rst_n | 1 | input | 复位信号 |
 | reg_data | 32 | input | 寄存器数据 |
@@ -279,7 +241,7 @@ parameters
 | tube_signal_right | 8 | output | 数码管信号 |
 
 | 模块名称：PS2 | 位宽 | 类型 | 说明：接受键盘数据 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
 | PS2D | 1 | input | 键盘输入 |
@@ -287,7 +249,7 @@ parameters
 | key | 16 | output | 处理后的键盘数据 |
 
 | 模块名称：process_keyboard | 位宽 | 类型 | 说明：处理键盘数据变为16进制数据 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
 | keyboard_out | 16 | input | 键盘数据输入 |
@@ -297,7 +259,7 @@ parameters
 | enter | 1 | output | 是否按下了enter键 |
 
 | 模块名称：datapath_inst | 位宽 | 类型 | 说明：链接CPU内外 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk_23 | 1 | input | 23Mhz时钟 |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
@@ -316,7 +278,7 @@ parameters
 | upg_done_o | 1 | input | 1 if programming is finished |
 
 | 模块名称：instr_decoder | 位宽 | 类型 | 说明：解读指令 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | instr | 32 | input | 指令输入 |
 | opcode | 7 | output | opcode |
 | funct3 | 3 | output | funct3 |
@@ -327,7 +289,7 @@ parameters
 | imme | 32 | output | 立即数 |
 
 | 模块名称：main_controller | 位宽 | 类型 | 说明：给出ALU和其他部分的控制信号 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | opcode | 7 | input | opcode |
 | funct3 | 3 | input | funct3 |
 | funct7 | 7 | input | funct7 |
@@ -350,7 +312,7 @@ parameters
 | jar | 1 | output | 指令类型判断 |
 
 | 模块名称：ecall_controller | 位宽 | 类型 | 说明：ecall的控制信号 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟信号 |
 | clk_23 | 1 | input | 23Mhz时钟信号 |
 | finish | 1 | input | 结束输入信号 |
@@ -359,7 +321,7 @@ parameters
 | ecall | 1 | output | ecall信号 |
 
 | 模块名称：pc | 位宽 | 类型 | 说明：更新point counter及跳转 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk | 1 | input | 时钟信号 |
 | rst_n | 1 | input | 复位信号 |
 | stop_flag | 1 | input | 停滞信号 |
@@ -375,7 +337,7 @@ parameters
 | upg_done_i | 1 | input | 1 if programming is finished |
 
 | 模块名称：reg_file | 位宽 | 类型 | 说明：写入写出寄存器数据 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk | 1 | input | 时钟信号 |
 | reset | 1 | input | 复位信号 |
 | stop_flag | 1 | input | 停滞信号 |
@@ -397,7 +359,7 @@ parameters
 | reg_map_led | 32 | output | led灯信号 |
 
 | 模块名称：ALU | 位宽 | 类型 | 说明：运算模块 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | Read_data1 | 32 | input | 输入数据1 |
 | Read_data2 | 32 | input | 输入数据2 |
 | imme | 32 | input | 立即数 |
@@ -417,7 +379,7 @@ parameters
 | jump_flag | 1 | output | 跳转信号 |
 
 | 模块名称：data_memory | 位宽 | 类型 | 说明：内存模块 |
-| --- | --- | --- | --- |
+|  | --- | --- | --- |
 | clk | 1 | input | 时钟信号 |
 | MemWrite | 1 | input | 控制信号 |
 | ALUResult | 14 | input | ALU运算结果 |
@@ -432,12 +394,12 @@ parameters
 
 # 4. System Instruction
 
----
+
 
 ![IMG_2432.jpeg](Computer-Organization-Project-Documentation-CPU-De%2002267c04d8cc42b2948275ba1ce84377/IMG_2432.jpeg)
 
 | 名称 | 功能介绍 |
-| --- | --- |
+|  | --- |
 | 数码管 | 与x31寄存器绑定，可以以16进制显示程序执行储存在x31寄存器的值或者通过切换数码管数据键来显示键盘输入数据的16进制数值 |
 | 复位键 | 复位，pc回到初始处，寄存器清零，内存清零 |
 | LED灯 | 根据project test要求显示不同的值 |
@@ -450,12 +412,12 @@ parameters
 
 # 5. Self-test specification
 
----
+
 
 测试用例例子：
 
 | 测试内容 | 测试方法 | 测试类型 | 测试用例 | 测试结果 |
-| --- | --- | --- | --- | --- |
+|  | --- | --- | --- | --- |
 | add | 仿真 | 集成 |  | 通过 |
 | sub | 仿真 | 集成 |  | 通过 |
 | xor | 仿真 | 集成 |  | 通过 |
@@ -496,7 +458,7 @@ parameters
 
 # 6. Bonus Statement
 
----
+
 
 ## Bonus：
 
@@ -657,7 +619,7 @@ echo "Build successful: ${base_name}.coe"
 
 # 7. Problems and Conclusion
 
----
+
 
 ## 吴雨潼
 
@@ -685,10 +647,8 @@ echo "Build successful: ${base_name}.coe"
 
 在工具链设计方面，了解了一些编译链接原理与uart协议后，自己下包写了一个编译与格式转化的脚本，实现了从指令到uart数据的自动化，相当有成就感。
 
----
 
 <aside>
 🔥 总的来说，这个project使我对计算机组成有了深入的认识
 自己手搓一个cpu相当酷，而且我们做到了！
-
 </aside>
