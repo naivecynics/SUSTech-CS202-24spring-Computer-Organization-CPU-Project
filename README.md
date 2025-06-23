@@ -147,15 +147,15 @@ Thanks to the PR form:
 ## （1）CPU Information Card
 
 | CPU时钟 | CPI | CPU周期 | Pipeline |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | 23MHz | 1 | 单周期 | nonsupport |
 
 | 寻址空间设计 | 寻址单位 | 指令空间 | 数据空间 | 栈空间的基地址 |
-|  | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | 哈佛结构 | Byte | $2^{14} $ Bytes | $2^{14}$ Bytes | $2^{10}$ Bytes |
 
 | 外设 I/O 支持 | I/O 访问方式 |
-|  | --- |
+| --- | --- |
 | MMIO | 中断访问 |
 
 ## （2）Instruction Set Architecture
@@ -167,7 +167,7 @@ Thanks to the PR form:
 ## （3）CPU Ports
 
 | cpu_top ports | 位宽 | 类型 | 说明 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
 | keyboard_clk | 1 | input | 键盘时钟 |
@@ -217,25 +217,25 @@ parameters
 ## （5）Submodule ports specifications and functions
 
 | 模块名称：debounce_reset | 位宽 | 类型 | 说明：信号复位消抖 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk | 1 | input | 100Mhz |
 | temkey | 1 | input | 初始复位信号 |
 | finalkey | 1 | output | 消抖后复位信号 |
 
 | 模块名称：debounce_finish | 位宽 | 类型 | 说明：确认信号消抖 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk | 1 | input | 100Mhz |
 | temkey | 1 | input | 初始结束信号 |
 | finalkey | 1 | output | 消抖后结束信号 |
 
 | 模块名称：cpuclk_inst | 位宽 | 类型 | 说明：分频器分出10/23Mhz的时钟 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk_in1 | 1 | input | 100Mhz输入信号 |
 | clk_out1 | 1 | output | 23Mhz输出信号 |
 | clk_out2 | 1 | output | 10Mhz输出信号 |
 
 | 模块名称：tube_inst |  | 类型 | 说明：数码管显示数据 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk | 1 | input | 100Mhz |
 | rst_n | 1 | input | 复位信号 |
 | reg_data | 32 | input | 寄存器数据 |
@@ -244,7 +244,7 @@ parameters
 | tube_signal_right | 8 | output | 数码管信号 |
 
 | 模块名称：PS2 | 位宽 | 类型 | 说明：接受键盘数据 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
 | PS2D | 1 | input | 键盘输入 |
@@ -252,7 +252,7 @@ parameters
 | key | 16 | output | 处理后的键盘数据 |
 
 | 模块名称：process_keyboard | 位宽 | 类型 | 说明：处理键盘数据变为16进制数据 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
 | keyboard_out | 16 | input | 键盘数据输入 |
@@ -262,7 +262,7 @@ parameters
 | enter | 1 | output | 是否按下了enter键 |
 
 | 模块名称：datapath_inst | 位宽 | 类型 | 说明：链接CPU内外 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk_23 | 1 | input | 23Mhz时钟 |
 | clk_100 | 1 | input | 100Mhz时钟 |
 | rst_n | 1 | input | 复位信号 |
@@ -281,7 +281,7 @@ parameters
 | upg_done_o | 1 | input | 1 if programming is finished |
 
 | 模块名称：instr_decoder | 位宽 | 类型 | 说明：解读指令 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | instr | 32 | input | 指令输入 |
 | opcode | 7 | output | opcode |
 | funct3 | 3 | output | funct3 |
@@ -292,7 +292,7 @@ parameters
 | imme | 32 | output | 立即数 |
 
 | 模块名称：main_controller | 位宽 | 类型 | 说明：给出ALU和其他部分的控制信号 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | opcode | 7 | input | opcode |
 | funct3 | 3 | input | funct3 |
 | funct7 | 7 | input | funct7 |
@@ -315,7 +315,7 @@ parameters
 | jar | 1 | output | 指令类型判断 |
 
 | 模块名称：ecall_controller | 位宽 | 类型 | 说明：ecall的控制信号 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk_100 | 1 | input | 100Mhz时钟信号 |
 | clk_23 | 1 | input | 23Mhz时钟信号 |
 | finish | 1 | input | 结束输入信号 |
@@ -324,7 +324,7 @@ parameters
 | ecall | 1 | output | ecall信号 |
 
 | 模块名称：pc | 位宽 | 类型 | 说明：更新point counter及跳转 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk | 1 | input | 时钟信号 |
 | rst_n | 1 | input | 复位信号 |
 | stop_flag | 1 | input | 停滞信号 |
@@ -340,7 +340,7 @@ parameters
 | upg_done_i | 1 | input | 1 if programming is finished |
 
 | 模块名称：reg_file | 位宽 | 类型 | 说明：写入写出寄存器数据 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk | 1 | input | 时钟信号 |
 | reset | 1 | input | 复位信号 |
 | stop_flag | 1 | input | 停滞信号 |
@@ -362,7 +362,7 @@ parameters
 | reg_map_led | 32 | output | led灯信号 |
 
 | 模块名称：ALU | 位宽 | 类型 | 说明：运算模块 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | Read_data1 | 32 | input | 输入数据1 |
 | Read_data2 | 32 | input | 输入数据2 |
 | imme | 32 | input | 立即数 |
@@ -382,7 +382,7 @@ parameters
 | jump_flag | 1 | output | 跳转信号 |
 
 | 模块名称：data_memory | 位宽 | 类型 | 说明：内存模块 |
-|  | --- | --- | --- |
+| --- | --- | --- | --- |
 | clk | 1 | input | 时钟信号 |
 | MemWrite | 1 | input | 控制信号 |
 | ALUResult | 14 | input | ALU运算结果 |
@@ -397,12 +397,10 @@ parameters
 
 # 4. System Instruction
 
-
-
 ![IMG_2432.jpeg](Computer-Organization-Project-Documentation-CPU-De%2002267c04d8cc42b2948275ba1ce84377/IMG_2432.jpeg)
 
 | 名称 | 功能介绍 |
-|  | --- |
+| --- | --- |
 | 数码管 | 与x31寄存器绑定，可以以16进制显示程序执行储存在x31寄存器的值或者通过切换数码管数据键来显示键盘输入数据的16进制数值 |
 | 复位键 | 复位，pc回到初始处，寄存器清零，内存清零 |
 | LED灯 | 根据project test要求显示不同的值 |
@@ -420,7 +418,7 @@ parameters
 测试用例例子：
 
 | 测试内容 | 测试方法 | 测试类型 | 测试用例 | 测试结果 |
-|  | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | add | 仿真 | 集成 |  | 通过 |
 | sub | 仿真 | 集成 |  | 通过 |
 | xor | 仿真 | 集成 |  | 通过 |
